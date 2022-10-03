@@ -1,11 +1,24 @@
-﻿namespace LanchesDoTafa.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Categoria
+namespace LanchesDoTafa.Models
 {
-    public int CategoriaId { get; set; }
-    public string CategoriaName { get; set; }
-    public string Descricao { get; set; }
+    [Table("Categorias")]
+    public class Categoria
+    {
+        [Key]
+        public int CategoriaId { get; set; }
 
-    public List<Lanche> Lanches { get; set; }
+        [StringLength(100, ErrorMessage = "Tamanho maximo de 100 caracteres")]
+        [Required(ErrorMessage = "Informe o nome da categoria")]
+        [Display(Name = "Nome")]
+        public string CategoriaName { get; set; }
+
+        [StringLength(200, ErrorMessage = "Tamanho maximo de 200 caracteres")]
+        [Required(ErrorMessage = "Informe a descricao da categoria")]
+        [Display(Name = "Nome")]
+        public string Descricao { get; set; }
+
+        public List<Lanche> Lanches { get; set; }
+    }
 }
-
