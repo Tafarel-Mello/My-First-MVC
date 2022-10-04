@@ -48,7 +48,7 @@ namespace LanchesDoTafa.Models
 
         public DateTime DataDeCriacao { get; set; }
 
-        [NotMapped]
+        [Required]
         public int CategoriaId { get; set; }
 
         public virtual Categoria Categoria { get; set; }

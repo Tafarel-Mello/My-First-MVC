@@ -16,7 +16,7 @@ namespace LanchesDoTafa.Models
 
         [StringLength(200, ErrorMessage = "Tamanho maximo de 200 caracteres")]
         [Required(ErrorMessage = "Informe a descricao da categoria")]
-        [Display(Name = "Nome")]
+        [Display(Name = "Descricao")]
         public string Descricao { get; set; }
 
         public List<Lanche> Lanches { get; set; }
