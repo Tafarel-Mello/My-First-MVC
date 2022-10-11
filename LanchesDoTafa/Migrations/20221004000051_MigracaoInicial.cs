@@ -47,7 +47,8 @@ namespace LanchesDoTafa.Migrations
                         name: "FK_Lanches_Categorias_CategoriaId1",
                         column: x => x.CategoriaId1,
                         principalTable: "Categorias",
-                        principalColumn: "CategoriaId");
+                        principalColumn: "CategoriaId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
