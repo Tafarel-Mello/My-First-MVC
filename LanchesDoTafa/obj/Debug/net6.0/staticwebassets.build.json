@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y+VR4sxk7NrREwqsq0XSJF+SFpLCa6+BQ5AFZ8paP+A=",
+  "Hash": "MA0IMD1mGzxCzbB7tr39uwAS45CTG3kXX7a0CJQHy8c=",
   "Source": "LanchesDoTafa",
   "BasePath": "_content/LanchesDoTafa",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\carousel13.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tafarel\\Documents\\Portfolio\\Repositorios GitHub Pessoal\\My-First-MVC\\LanchesDoTafa\\My-First-MVC\\LanchesDoTafa\\wwwroot\\images\\hot-dog-vege-all-dressed.jpg",
+      "SourceId": "LanchesDoTafa",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tafarel\\Documents\\Portfolio\\Repositorios GitHub Pessoal\\My-First-MVC\\LanchesDoTafa\\My-First-MVC\\LanchesDoTafa\\wwwroot\\",
+      "BasePath": "_content/LanchesDoTafa",
+      "RelativePath": "images/hot-dog-vege-all-dressed.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\hot-dog-vege-all-dressed.jpg"
     },
     {
       "Identity": "C:\\Users\\Tafarel\\Documents\\Portfolio\\Repositorios GitHub Pessoal\\My-First-MVC\\LanchesDoTafa\\My-First-MVC\\LanchesDoTafa\\wwwroot\\js\\site.js",
