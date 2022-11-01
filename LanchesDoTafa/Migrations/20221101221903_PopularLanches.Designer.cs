@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanchesDoTafa.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221101221201_MigracaoInicial")]
-    partial class MigracaoInicial
+    [Migration("20221101221903_PopularLanches")]
+    partial class PopularLanches
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
