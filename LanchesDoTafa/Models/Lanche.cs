@@ -12,7 +12,7 @@ namespace LanchesDoTafa.Models
         [Required(ErrorMessage = "O nome do lanche deve ser informado")]
         [Display(Name = "Nome do Lanche")]
         [StringLength(80, MinimumLength = 10, ErrorMessage = "O {0} deve ter no minimo {1} e no maximo {2} caracteres")]
-        public string Name { get; set; }
+        public string Nome { get; set; }
 
         [Required(ErrorMessage = "A descricao do lanche deve ser informada")]
         [Display(Name = "Descricao do lanche")]
@@ -45,8 +45,6 @@ namespace LanchesDoTafa.Models
 
         [Display(Name = "Estoque")]
         public bool EmEstoque { get; set; }
-
-        public DateTime DataDeCriacao { get; set; }
 
         [Required]
         public int CategoriaId { get; set; }
