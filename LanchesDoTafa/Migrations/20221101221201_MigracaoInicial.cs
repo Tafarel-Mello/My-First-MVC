@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -29,7 +28,7 @@ namespace LanchesDoTafa.Migrations
                 {
                     LancheId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     DescricaoCurta = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     DescricaoDetalhada = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Preco = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
@@ -37,23 +36,23 @@ namespace LanchesDoTafa.Migrations
                     ImagemThumbnailUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     IsLanchePreferido = table.Column<bool>(type: "bit", nullable: false),
                     EmEstoque = table.Column<bool>(type: "bit", nullable: false),
-                    DataDeCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CategoriaId1 = table.Column<int>(type: "int", nullable: true)
+                    CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Lanches", x => x.LancheId);
                     table.ForeignKey(
-                        name: "FK_Lanches_Categorias_CategoriaId1",
-                        column: x => x.CategoriaId1,
+                        name: "FK_Lanches_Categorias_CategoriaId",
+                        column: x => x.CategoriaId,
                         principalTable: "Categorias",
-                        principalColumn: "CategoriaId");
+                        principalColumn: "CategoriaId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lanches_CategoriaId1",
+                name: "IX_Lanches_CategoriaId",
                 table: "Lanches",
-                column: "CategoriaId1");
+                column: "CategoriaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
