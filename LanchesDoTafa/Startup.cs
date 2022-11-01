@@ -1,4 +1,6 @@
 ﻿using LanchesDoTafa.Context;
+using LanchesDoTafa.Repositories;
+using LanchesDoTafa.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchesDoTafa;
@@ -15,6 +17,9 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaulConnection")));
+
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
         services.AddControllersWithViews();
     }
