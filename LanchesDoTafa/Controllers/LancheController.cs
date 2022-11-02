@@ -14,8 +14,18 @@ namespace LanchesDoTafa.Controllers
 
         public IActionResult List()
         {
+            ViewData["Titulo"] = "Todos os Lanches";
+            ViewData["Data"] = DateTime.Now;
+
             var lanches = _lancheRepository.Lanches;
+            var TotalLanches = lanches.Count();
+
+            ViewBag.Total = "Total de lanches: ";
+            ViewBag.TotalLanches = TotalLanches;
+
+
             return View(lanches);
+
         }
     }
 }
