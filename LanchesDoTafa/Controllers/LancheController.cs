@@ -1,4 +1,5 @@
 ﻿using LanchesDoTafa.Repositories.Interfaces;
+using LanchesDoTafa.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchesDoTafa.Controllers
@@ -14,13 +15,14 @@ namespace LanchesDoTafa.Controllers
 
         public IActionResult List()
         {
-            ViewData["Titulo"] = "Todos os Lanches";
+            //var lanches = _lancheRepository.Lanches;
+            //return View(lanches);
 
-            var lanches = _lancheRepository.Lanches;
-            var TotalLanches = lanches.Count();
+            var lanchesListViewModel = new LancheListViewModel();
+            lanchesListViewModel.Lanches = _lancheRepository.Lanches;
+            lanchesListViewModel.CategoriaAtual = "Categoria atual";
 
-            return View(lanches);
-
+            return View(lanchesListViewModel);
         }
     }
 }
