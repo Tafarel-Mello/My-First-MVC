@@ -13,7 +13,7 @@ namespace LanchesDoTafa.Models
         public int Quantidade { get; set; }
 
         [StringLength(200)]
-        public string CarinhoCompraId { get; set; }
+        public string CarrinhoCompraId { get; set; }
 
     }
 }
