@@ -1,4 +1,5 @@
 ﻿using LanchesDoTafa.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace LanchesDoTafa.Models
 {
@@ -82,8 +83,30 @@ namespace LanchesDoTafa.Models
                     _context.CarrinhoCompraItens.Remove(carrinhoCompraItem);
                 }
             }
-            _context.SaveChanges();
+            _context.SaveChanges(); // persistir no data-base
             return quantidadeLocal;
         }
+
+        // retorno dos itens do carrinho
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
+        {
+            return CarrinhoCompraItems ?? (CarrinhoCompraItems = _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId).Include(s => s.Lanche).ToList());
+        }
+
+        public void LimparCarrinho() 
+        {
+            var carrinhoItens = _context.CarrinhoCompraItens
+                .Where(carrinho => carrinho.CarrinhoCompraId == CarrinhoCompraId);
+            _context.CarrinhoCompraItens.RemoveRange(carrinhoItens);
+
+            _context.SaveChanges();
+        }
+
+        public decimal GetCarrinhoCompraTotal()
+        {
+            var total = _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId).Select(c => c.Lanche.Preco * c.Quantidade).Sum();
+            return total;
+        }
+
     }
 }
